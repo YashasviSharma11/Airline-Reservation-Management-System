@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>YSAir</title>
+  <!------Font awesome cdn link-------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!------CSS file link------->
+  <link rel="stylesheet" th:href="@{/css/style.css}" href="../../static/css/style.css">
+
+</head>
+
+<body>
+<!-- header section starts  -->
+<header class="header">
+  <a href="#" class="logo"><i class="fas fa-plane" aria-hidden="true"></i> YSAir</a>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="#book-form">Booking</a>
+    <a href="/contact.html">contact</a>
+  </nav>
+  <a href="/api/v1/auth/login" ><img src="../../static/images/avatar.svg" th:src="@{/images/avatar.svg}" width="30px" height="30px"/></a>
+</header>
+<!-----header section ends---->
+
+<!-----home section starts---->
+<section class="home" id="home">
+  <div class="home-slider">
+    <div class="slide">
+      <div class="box" >
+        <div class="content">
+          <h3>Fly with us</h3>
+          <p>Connecting people, places, and cultures.</p>
+          <a href="#book-form" class="btn">Book now</a>
+        </div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-----home section ends------>
+
+<!-----Book section starts----->
+<section class="book" id="book">
+  <h1 class="heading">
+    <span>B</span>
+    <span>o</span>
+    <span>o</span>
+    <span>k</span>
+    <span class="space"></span>
+    <span>N</span>
+    <span>o</span>
+    <span>w</span>
+  </h1>
+</section>
+<section class="book-form" id="book-form">
+  <form id="bookingForm">
+    <div class="inputBox">
+                    <span><i class="fa-solid fa-plane-departure"></i> From</span>
+                    <input type="text" placeholder="City or airport" value="" id="bstart" list="airportOptions" autocomplete="off">
+    </div>
+    <div class="inputBox">
+                    <span><i class="fa-sharp fa-solid fa-plane-arrival"></i> To</span>
+                    <input type="text" placeholder="City or airport" value="" id="bEnd" list="airportOptions" autocomplete="off">
+    </div>
+<!--    <div class="inputBox">-->
+<!--                    <span><i class="fa-solid fa-calendar-days"></i> Departure</span>-->
+<!--                    <input type="date" >-->
+<!--    </div>-->
+<!--    <div class="inputBox">-->
+<!--      <span><i class="fa-solid fa-calendar-days"></i> Return</span>-->
+<!--      <input type="date" >-->
+
+    <div class="inputBox">
+      <span><i class="fa-solid fa-ticket"></i> Count</span>
+      <input type="number" placeholder=" passengers" value="" id="numOfSeat">
+    </div>
+
+
+   <button type="button" id="btnclick" class="btn-2" >Check Price</button>
+    <a href="/payment.html" class="btn-2" style="visibility: hidden" id="bookNowbtn">Book Now</a>
+    <p id="fareResult" style="margin-top: 1rem; font-weight: bold;"></p>
+    <div id="flightResult" class="flight-result" hidden>
+      <h3>Flight details</h3>
+      <p><strong>Flight:</strong> <span id="flightNumber"></span></p>
+      <p><strong>Airline:</strong> <span id="flightAirline"></span></p>
+      <p><strong>Aircraft:</strong> <span id="flightAircraft"></span></p>
+      <p><strong>Departure:</strong> <span id="flightDeparture"></span></p>
+      <p><strong>Arrival:</strong> <span id="flightArrival"></span></p>
+      <p><strong>Duration:</strong> <span id="flightDuration"></span></p>
+      <p><strong>Airport codes:</strong> <span id="flightCodes"></span></p>
+      <p><strong>Airport names:</strong> <span id="flightAirports"></span></p>
+    </div>
+    </form>
+
+  <datalist id="airportOptions">
+    <option value="Mumbai" label="Chhatrapati Shivaji Maharaj International Airport (BOM)"></option>
+    <option value="Delhi" label="Indira Gandhi International Airport (DEL)"></option>
+    <option value="Bengaluru" label="Kempegowda International Airport (BLR)"></option>
+    <option value="Chennai" label="Chennai International Airport (MAA)"></option>
+    <option value="Kolkata" label="Netaji Subhas Chandra Bose International Airport (CCU)"></option>
+    <option value="Hyderabad" label="Rajiv Gandhi International Airport (HYD)"></option>
+    <option value="Goa" label="Manohar International Airport (GOX)"></option>
+    <option value="Pune" label="Pune International Airport (PNQ)"></option>
+    <option value="New York" label="John F. Kennedy International Airport (JFK)"></option>
+    <option value="London" label="Heathrow Airport (LHR)"></option>
+    <option value="Dubai" label="Dubai International Airport (DXB)"></option>
+    <option value="Singapore" label="Singapore Changi Airport (SIN)"></option>
+  </datalist>
+
+
+</section>
+<div class="covid">
+<!--  <a href="#" class="btn-3">-->
+<!--    Check Covid-19 entry requirements-->
+<!--  </a>-->
+  <br>
+  <br>
+</div>
+<!-----Book section ends------->
+
+<!-----Footer section starts----->
+<div class="footer">
+  <div class="row">
+    <div class="footer-col-1">
+      <h3>Download Our App</h3>
+      <p>Download App for Android and jos mobile phone.</p>
+      <div class="app-logo">
+        <img src="../../static/images/play-store.png" th:src="@{/images/play-store.png}">
+        <img src="../../static/images/app-store.png" th:src="@{/images/app-store.png}">
+      </div>
+    </div>
+    <div class="footer-col-2">
+      <a href="#" class="logo"><i class="fas fa-plane" aria-hidden="true"></i> YSAir</a>
+    </div>
+    <div class="footer-col-3">
+      <h3>Useful Links</h3>
+      <ul>
+        <li>Coupons</li>
+        <li>Blog Post</li>
+        <li>Return Policy</li>
+        <li>Join Affiliate</li>
+      </ul>
+    </div>
+    <div class="footer-col-4">
+      <h3>Follow us</h3>
+      <ul>
+        <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+        <li><i class="fa-brands fa-twitter"></i> Twitter</li>
+        <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+        <li><i class="fa-brands fa-youtube"></i> Youtube</li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <p class="copyright">© 2026 Yashasvi Sharma · YSAir</p>
+</div>
+---Footer section ends-----
+
+---Custom js file link---
+<script type="text/javascript">
+
+  const flightSchedule = {
+    'mumbai|delhi': {
+      flightNumber: 'YSA 101', airline: 'YSAir', aircraft: 'Airbus A320',
+      departure: '08:30 AM', arrival: '10:45 AM', duration: '2h 15m', codes: 'BOM → DEL'
+    },
+    'delhi|mumbai': {
+      flightNumber: 'YSA 102', airline: 'YSAir', aircraft: 'Airbus A320',
+      departure: '06:45 PM', arrival: '09:00 PM', duration: '2h 15m', codes: 'DEL → BOM'
+    },
+    'new york|london': {
+      flightNumber: 'YSA 501', airline: 'YSAir', aircraft: 'Boeing 787',
+      departure: '07:00 PM', arrival: '07:10 AM +1', duration: '7h 10m', codes: 'JFK → LHR'
+    },
+    'london|new york': {
+      flightNumber: 'YSA 502', airline: 'YSAir', aircraft: 'Boeing 787',
+      departure: '10:30 AM', arrival: '01:25 PM', duration: '8h 55m', codes: 'LHR → JFK'
+    }
+  };
+
+  const airportCatalog = {
+    mumbai: { code: 'BOM', name: 'Chhatrapati Shivaji Maharaj International Airport' },
+    delhi: { code: 'DEL', name: 'Indira Gandhi International Airport' },
+    bengaluru: { code: 'BLR', name: 'Kempegowda International Airport' },
+    chennai: { code: 'MAA', name: 'Chennai International Airport' },
+    kolkata: { code: 'CCU', name: 'Netaji Subhas Chandra Bose International Airport' },
+    hyderabad: { code: 'HYD', name: 'Rajiv Gandhi International Airport' },
+    goa: { code: 'GOX', name: 'Manohar International Airport' },
+    pune: { code: 'PNQ', name: 'Pune International Airport' },
+    'new york': { code: 'JFK', name: 'John F. Kennedy International Airport' },
+    london: { code: 'LHR', name: 'Heathrow Airport' },
+    dubai: { code: 'DXB', name: 'Dubai International Airport' },
+    singapore: { code: 'SIN', name: 'Singapore Changi Airport' }
+  };
+
+  function airportInfo(value) {
+    const city = value.trim().toLowerCase();
+    return airportCatalog[city] || {
+      code: city.replace(/[^a-z]/g, '').slice(0, 3).toUpperCase() || 'YSX',
+      name: `${value.trim()} Airport`
+    };
+  }
+
+  function getFlightDetails(start, destination) {
+    const scheduled = flightSchedule[`${start.trim().toLowerCase()}|${destination.trim().toLowerCase()}`];
+    if (scheduled) {
+      const scheduledFrom = airportInfo(start);
+      const scheduledTo = airportInfo(destination);
+      return { ...scheduled, airportNames: `${scheduledFrom.name} → ${scheduledTo.name}` };
+    }
+
+    const from = airportInfo(start);
+    const to = airportInfo(destination);
+    const flightId = 200 + (start.length * 7 + destination.length * 11) % 700;
+    const durationHours = Math.max(1, Math.min(12, Math.round((start.length + destination.length) / 2)));
+    return {
+      flightNumber: `YSA ${flightId}`, airline: 'YSAir', aircraft: durationHours > 6 ? 'Boeing 787' : 'Airbus A320',
+      departure: '09:00 AM', arrival: `${(9 + durationHours) % 12 || 12}:00 ${9 + durationHours >= 12 ? 'PM' : 'AM'}`,
+      duration: `${durationHours}h 00m`, codes: `${from.code} → ${to.code}`,
+      airportNames: `${from.name} → ${to.name}`
+    };
+  }
+
+  function estimatedFare(start, destination, passengers) {
+    const distanceFactor = Math.max(1, start.length + destination.length);
+    return Math.round((1800 + distanceFactor * 275) * passengers);
+  }
+
+  function saveBooking(start, destination, passengers, fare, flight) {
+    localStorage.setItem('bookingData', JSON.stringify({
+      startPlace: start,
+      destination,
+      ticketCount: passengers,
+      ticketPrice: fare,
+      flightDetails: flight
+    }));
+    document.getElementById('bookNowbtn').style.visibility = 'visible';
+  }
+
+  function showFlightDetails(flight) {
+    document.getElementById('flightNumber').textContent = flight.flightNumber;
+    document.getElementById('flightAirline').textContent = flight.airline;
+    document.getElementById('flightAircraft').textContent = flight.aircraft;
+    document.getElementById('flightDeparture').textContent = flight.departure;
+    document.getElementById('flightArrival').textContent = flight.arrival;
+    document.getElementById('flightDuration').textContent = flight.duration;
+    document.getElementById('flightCodes').textContent = flight.codes;
+    document.getElementById('flightAirports').textContent = flight.airportNames || 'Airport details available at check-in';
+    document.getElementById('flightResult').hidden = false;
+  }
+
+  function checkPrice() {
+    const formData = {
+      bstart: document.getElementById('bstart').value,
+      bend: document.getElementById('bEnd').value,
+      bnumofseat: document.getElementById('numOfSeat').value,
+      // Add more form fields here as needed
+    };
+
+    const fareResult = document.getElementById('fareResult');
+    const passengers = Number(formData.bnumofseat);
+    fareResult.textContent = '';
+
+    if (!formData.bstart || !formData.bend || !Number.isInteger(passengers) || passengers < 1) {
+      fareResult.textContent = 'Enter origin, destination, and at least 1 passenger.';
+      return;
+    }
+
+    if (formData.bstart.trim().toLowerCase() === formData.bend.trim().toLowerCase()) {
+      fareResult.textContent = 'Choose two different airports.';
+      return;
+    }
+
+    const jwtToken = localStorage.getItem('jwtToken');
+
+    if (jwtToken) {
+      fetch('/api/v1/demo-controller/checkPrice', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${jwtToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, bnumofseat: passengers }),
+      })
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                return response.json();
+              })
+              .then(data => {
+                const fare = Number(data);
+                const flight = getFlightDetails(formData.bstart, formData.bend);
+                fareResult.textContent = `Estimated fare: ₹${fare.toLocaleString('en-IN')}`;
+                showFlightDetails(flight);
+                saveBooking(formData.bstart, formData.bend, passengers, fare, flight);
+
+              })
+              .catch(error => {
+                const flight = getFlightDetails(formData.bstart, formData.bend);
+                const fare = estimatedFare(formData.bstart, formData.bend, passengers);
+                fareResult.textContent = `Estimated fare: ₹${fare.toLocaleString('en-IN')} (route estimate)`;
+                showFlightDetails(flight);
+                saveBooking(formData.bstart, formData.bend, passengers, fare, flight);
+                console.error('Error:', error.message);
+              })
+              .finally(() => {
+              });
+    } else {
+      window.location.href = '/api/v1/auth/login';
+    }
+  }
+
+
+  const myBtn = document.getElementById('btnclick');
+  myBtn.addEventListener('click', function (event)
+  {
+    event.preventDefault();
+    checkPrice();
+  }, false);
+
+
+</script>
+
+</body>
+</html>

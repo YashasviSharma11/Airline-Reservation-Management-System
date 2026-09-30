@@ -1,0 +1,51 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 32px 16px; min-height: 100vh; background: linear-gradient(135deg, #dff6ff, #f7fbff); color: #17324d; }
+  
+  .container {
+    max-width: 620px; margin: 0 auto; padding: 28px; border-radius: 18px;
+    background: rgba(255,255,255,.96); box-shadow: 0 15px 45px rgba(27,78,114,.18);
+  }
+    
+  
+  h1 { text-align: center; color: #146c94; margin-top: 0; }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+ 
+  .booking-details, .payment-method { border: 1px solid #d5e5ee; border-radius: 12px; padding: 18px; margin-bottom: 20px; background: #fbfdff; }
+  .booking-details p { display: flex; justify-content: space-between; border-bottom: 1px solid #edf3f6; padding: 8px 0; margin: 0; }
+
+  
+  .payment-method form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .payment-method label { margin: 8px 0 5px; font-weight: 600; }
+  .payment-method input { margin-bottom: 8px; padding: 11px; border: 1px solid #bfd5e0; border-radius: 7px; font-size: 15px; }
+  
+  .payment-method button {
+    background-color: #19A7CE;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  
+  
+    
+  .payment-method button:hover {
+    background-color: #146C94;
+  }
+
+  .confirmation { text-align: center; margin-top: 8vh; }
+  .success-icon { width: 70px; height: 70px; margin: 0 auto 16px; border-radius: 50%; background: #21a366; color: white; font-size: 48px; line-height: 70px; }
+  .success-message { color: #527080; margin-bottom: 24px; }
+  .home-button { display: inline-block; text-decoration: none; background: #19A7CE; border-radius: 8px; color: white; padding: 12px 22px; }
+  

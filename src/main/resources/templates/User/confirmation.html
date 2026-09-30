@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed</title>
+  <link rel="stylesheet" href="/css/payment.css">
+</head>
+<body>
+  <main class="container confirmation">
+    <div class="success-icon">✓</div>
+    <h1>Booking Confirmed</h1>
+    <p class="success-message">Your payment was received and your flight has been reserved.</p>
+    <div class="booking-details">
+      <p><strong>Booking reference:</strong> <span id="reference"></span></p>
+      <p><strong>Passenger:</strong> <span id="passenger"></span></p>
+      <p><strong>Route:</strong> <span id="route"></span></p>
+      <p><strong>Flight:</strong> <span id="flight-number"></span></p>
+      <p><strong>Airline / Aircraft:</strong> <span id="flight-aircraft"></span></p>
+      <p><strong>Departure / Arrival:</strong> <span id="flight-times"></span></p>
+      <p><strong>Duration:</strong> <span id="flight-duration"></span></p>
+      <p><strong>Airport codes:</strong> <span id="flight-codes"></span></p>
+      <p><strong>Tickets:</strong> <span id="tickets"></span></p>
+      <p><strong>Paid:</strong> <span id="paid"></span></p>
+      <p><strong>Card:</strong> <span id="card"></span></p>
+    </div>
+    <a class="buttonsub home-button" href="/">Back to home</a>
+  </main>
+  <script>
+    const booking = JSON.parse(localStorage.getItem('bookingData') || '{}');
+    const payment = JSON.parse(localStorage.getItem('paymentData') || '{}');
+    document.getElementById('reference').textContent = payment.bookingReference || 'Pending';
+    document.getElementById('passenger').textContent = payment.cardHolder || 'Passenger';
+    document.getElementById('route').textContent = `${booking.startPlace || '-'} → ${booking.destination || '-'}`;
+    const flight = booking.flightDetails || {};
+    document.getElementById('flight-number').textContent = flight.flightNumber || 'To be confirmed';
+    document.getElementById('flight-aircraft').textContent = `${flight.airline || 'YSAir'} / ${flight.aircraft || 'Passenger aircraft'}`;
+    document.getElementById('flight-times').textContent = `${flight.departure || 'To be confirmed'} → ${flight.arrival || 'To be confirmed'}`;
+    document.getElementById('flight-duration').textContent = flight.duration || 'To be confirmed';
+    document.getElementById('flight-codes').textContent = flight.codes || 'To be confirmed';
+    document.getElementById('tickets').textContent = booking.ticketCount || 0;
+    document.getElementById('paid').textContent = `₹${Number(booking.ticketPrice || 0).toLocaleString('en-IN')}`;
+    document.getElementById('card').textContent = payment.lastFour ? `**** **** **** ${payment.lastFour}` : 'Card verified';
+  </script>
+</body>
+</html>

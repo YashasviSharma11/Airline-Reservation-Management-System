@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Choosing Page</title>
+  <link rel="stylesheet" href="/css/select.css">
+  
+</head>
+<body style="background-image: url('../../static/images/selectpage01.jpeg')">
+  <div class="container">
+    <h1 >Choose Your Flight</h1>
+    <form id="flight-chooser-form" action="/ticket.html" method="get">
+      <div class="flight-option" data-flight="YSA 101" data-airline="YSAir" data-aircraft="Airbus A320" data-route="Mumbai (BOM) → Delhi (DEL)" data-departure="08:30 AM" data-arrival="10:45 AM" data-duration="2h 15m" data-fare="1150">
+      <label>
+          <input type="radio" name="flight" value="flight1">
+          <span class="flight-name">YSA 101 · YSAir</span>
+          <span class="flight-route">Mumbai (BOM) → Delhi (DEL)</span>
+          <span class="flight-time">08:30 AM – 10:45 AM · 2h 15m</span>
+          <span class="flight-aircraft">Airbus A320 · From ₹1,150</span>
+      </label>
+      </div>
+      <div class="flight-option" data-flight="YSA 102" data-airline="YSAir" data-aircraft="Airbus A320" data-route="Delhi (DEL) → Mumbai (BOM)" data-departure="06:45 PM" data-arrival="09:00 PM" data-duration="2h 15m" data-fare="1150">
+        <label>
+          <input type="radio" name="flight" value="flight2">
+          <span class="flight-name">YSA 102 · YSAir</span>
+          <span class="flight-route">Delhi (DEL) → Mumbai (BOM)</span>
+          <span class="flight-time">06:45 PM – 09:00 PM · 2h 15m</span>
+          <span class="flight-aircraft">Airbus A320 · From ₹1,150</span>
+        </label>
+      </div>
+      <div class="flight-option" data-flight="YSA 501" data-airline="YSAir" data-aircraft="Boeing 787" data-route="New York (JFK) → London (LHR)" data-departure="07:00 PM" data-arrival="07:10 AM +1" data-duration="7h 10m" data-fare="47345">
+        <label>
+          <input type="radio" name="flight" value="flight3">
+          <span class="flight-name">YSA 501 · YSAir</span>
+          <span class="flight-route">New York (JFK) → London (LHR)</span>
+          <span class="flight-time">07:00 PM – 07:10 AM +1 · 7h 10m</span>
+          <span class="flight-aircraft">Boeing 787 · From ₹47,345</span>
+        </label>
+      </div>
+      <div class="flight-option" data-flight="YSA 502" data-airline="YSAir" data-aircraft="Boeing 787" data-route="London (LHR) → New York (JFK)" data-departure="10:30 AM" data-arrival="01:25 PM" data-duration="8h 55m" data-fare="47345">
+        <label>
+          <input type="radio" name="flight" value="flight4">
+          <span class="flight-name">YSA 502 · YSAir</span>
+          <span class="flight-route">London (LHR) → New York (JFK)</span>
+          <span class="flight-time">10:30 AM – 01:25 PM · 8h 55m</span>
+          <span class="flight-aircraft">Boeing 787 · From ₹47,345</span>
+      </label>
+      </div>
+      <button class="buttonsub" type="submit">Select Flight</button>
+    </form>
+  </div>
+  <script src="/js/select.js"></script>
+</body>
+</html>
